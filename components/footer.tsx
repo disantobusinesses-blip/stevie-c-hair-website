@@ -12,7 +12,7 @@ export function Footer() {
             alt="Stevie C Hair"
             width={180}
             height={65}
-            className="h-16 w-auto mb-8 brightness-0 invert"
+            className="h-16 w-auto mb-8 mix-blend-luminosity brightness-125"
           />
 
           {/* Accreditation */}

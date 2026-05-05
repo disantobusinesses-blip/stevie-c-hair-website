@@ -21,7 +21,7 @@ const team = [
 
 export function TeamSection() {
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
+    <section id="team" className="py-24 lg:py-32 bg-secondary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">

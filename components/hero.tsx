@@ -56,14 +56,16 @@ export function Hero() {
           An accredited Gold Salon, part of The Australian Hairdressing Council
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="https://www.phorest.com/salon/steviechair"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-primary-foreground px-10 py-4 text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors duration-300"
+          <a
+            href="#team"
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById("team")?.scrollIntoView({ behavior: "smooth" })
+            }}
+            className="bg-primary text-primary-foreground px-10 py-4 text-sm tracking-widest uppercase hover:bg-accent transition-colors duration-300 cursor-pointer"
           >
             Book Your Appointment
-          </Link>
+          </a>
           <Link
             href="/services"
             className="border border-white text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-white hover:text-foreground transition-colors duration-300"
