@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
@@ -14,13 +15,16 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+  const [scrolled, setScrolled] = useState(!isHome)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    setScrolled(!isHome || window.scrollY > 40)
+    const onScroll = () => setScrolled(!isHome || window.scrollY > 40)
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+  }, [isHome])
 
   const handleBookNow = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href")
@@ -67,13 +71,24 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="#team"
-              onClick={handleBookNow}
-              className="text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 py-2.5 hover:bg-accent transition-colors duration-300 cursor-pointer"
-            >
-              Book Now
-            </a>
+            {isHome ? (
+              <a
+                href="#team"
+                onClick={handleBookNow}
+                className="text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 py-2.5 hover:bg-accent transition-colors duration-300 cursor-pointer"
+              >
+                Book Now
+              </a>
+            ) : (
+              <a
+                href="https://www.phorest.com/salon/steviechair"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 py-2.5 hover:bg-accent transition-colors duration-300"
+              >
+                Book Now
+              </a>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,13 +118,25 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="#team"
-              onClick={handleBookNow}
-              className="block text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 py-3 text-center hover:bg-accent transition-colors duration-300 cursor-pointer"
-            >
-              Book Now
-            </a>
+            {isHome ? (
+              <a
+                href="#team"
+                onClick={handleBookNow}
+                className="block text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 py-3 text-center hover:bg-accent transition-colors duration-300 cursor-pointer"
+              >
+                Book Now
+              </a>
+            ) : (
+              <a
+                href="https://www.phorest.com/salon/steviechair"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="block text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 py-3 text-center hover:bg-accent transition-colors duration-300"
+              >
+                Book Now
+              </a>
+            )}
           </div>
         </div>
       )}
