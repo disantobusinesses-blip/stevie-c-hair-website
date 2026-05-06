@@ -12,7 +12,7 @@ const team = [
   {
     name: "Tara",
     title: "Senior Stylist",
-    bio: "Tara brings creativity and precision to every client. Known for her warm approach and technical expertise, she excels at transforming hair with seamless colours and modern cuts that suit each individual&apos;s style and personality.",
+    bio: "Tara brings creativity and precision to every client. Known for her warm approach and technical expertise, she excels at transforming hair with seamless colours and modern cuts that suit each individual's style and personality.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SnapInsta.to_658821368_18570918937039369_9220421943294825877_n-9Dthnalc02xFVEyL8vjQmsOwR4Exo2.jpg",
     // BOOKING URL: Replace with actual booking URL for Tara
     bookingUrl: "https://booking.clientdiary.com/?bookingsUrl=Tara",
