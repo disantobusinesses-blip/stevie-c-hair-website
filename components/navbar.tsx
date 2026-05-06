@@ -45,11 +45,11 @@ export function Navbar() {
           {/* Logo — mix-blend-mode so white bg disappears on dark nav */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/steviechair-zYN8wtcOQx76qu3RgVtf6Xme2vjxvU.jpg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/df203099-c0cc-4e1b-8015-2de9729f6892.jpeg"
               alt="Stevie C Hair"
               width={140}
               height={50}
-              className="h-12 w-auto mix-blend-luminosity brightness-125"
+              className="h-12 w-auto"
               priority
             />
           </Link>

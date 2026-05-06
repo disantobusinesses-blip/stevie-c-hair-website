@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 export function Footer() {
@@ -6,15 +5,6 @@ export function Footer() {
     <footer className="bg-foreground text-white py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
-          {/* Logo */}
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/steviechair-zYN8wtcOQx76qu3RgVtf6Xme2vjxvU.jpg"
-            alt="Stevie C Hair"
-            width={180}
-            height={65}
-            className="h-16 w-auto mb-8 mix-blend-luminosity brightness-125"
-          />
-
           {/* Accreditation */}
           <p className="text-white/60 text-sm tracking-wider mb-8 max-w-md">
             Stevie C Hair is an accredited Gold Salon, part of The Australian Hairdressing Council
